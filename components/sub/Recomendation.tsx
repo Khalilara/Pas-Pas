@@ -29,21 +29,24 @@ const SamsungEnterpriseComponent = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => window.open('https://www.samsungknox.com/fr/blog/samsung-knox-platform-3-2-receives-strong-ratings-by-gartner', '_blank')}
-            className="bg-gray-100 hover:bg-gray-200 text-white font-semibold py-3 px-8 rounded-full border border-gray-300 transition-all duration-200"
+          <a
+            href="https://www.samsungknox.com/fr/blog/samsung-knox-platform-3-2-receives-strong-ratings-by-gartner"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 bg-gray-100 hover:bg-gray-200 text-black font-semibold py-3 px-8 rounded-full border border-gray-300 transition-all duration-200 inline-block"
           >
             VOIR LE RAPPORT GARTNER
-          </button>
+          </a>
         </div>
 
         {/* Section Android Enterprise */}
         <div className="flex flex-col items-center text-center space-y-6 p-8 border border-gray-300 rounded-xl shadow-md bg-white/5">
-          <div className="bg-green-600 text-white px-6 py-2 rounded-full flex items-center space-x-2">
-            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-              <span className="text-green-600 text-xs font-bold">a</span>
-            </div>
-            <span className="text-sm font-medium text-white">android enterprise recommended</span>
+          <div className="bg-white rounded-full px-6 py-2 flex items-center space-x-2 shadow-md">
+            <img 
+              src="/image3.png" 
+              alt="Android Enterprise Recommended" 
+              className="h-12 object-contain"
+            />
           </div>
 
           <div className="space-y-4 leading-relaxed tracking-wide">
@@ -56,12 +59,14 @@ const SamsungEnterpriseComponent = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => window.open('https://www.samsungknox.com/fr/aer', '_blank')}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 border-2 border-blue-600"
+          <a
+            href="https://www.samsungknox.com/fr/aer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 border-2 border-blue-600 inline-block"
           >
             EN SAVOIR PLUS
-          </button>
+          </a>
         </div>
 
         {/* Section IDC */}
@@ -83,12 +88,14 @@ const SamsungEnterpriseComponent = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => window.open('https://www.samsungknox.com/fr/blog/samsung-idc-marketscape-2024', '_blank')}
-            className="bg-gray-100 hover:bg-gray-200 text-white font-semibold py-3 px-8 rounded-full border border-gray-300 transition-all duration-200"
-            >
+          <a
+            href="https://www.samsungknox.com/fr/blog/samsung-idc-marketscape-2024"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 bg-gray-100 hover:bg-gray-200 text-black font-semibold py-3 px-8 rounded-full border border-gray-300 transition-all duration-200 inline-block"
+          >
             EN SAVOIR PLUS
-        </button>
+          </a>
         </div>
 
       </div>
