@@ -19,7 +19,7 @@ const SamsungEnterpriseComponent = () => {
             <div className="bg-gray-200/80 rounded-full px-6 py-3 inline-block">
               <p className="text-sm italic text-white font-light">
                 Le leader reconnu du marché dans la gestion<br />
-                d'appareils
+                d&apos;appareils
               </p>
             </div>
 

@@ -29,7 +29,7 @@ export const KnoxSection = () => {
           <h2 className="text-3xl font-bold mb-4">Knox Cloud Solutions</h2>
           <p className="text-base leading-relaxed">
             Notre portefeuille de solutions cloud Knox
-             permet aux entreprises de configurer, personnaliser, déployer, analyser et gérer leurs appareils. Cela améliore les performances de l'entreprise et aide les travailleurs à obtenir une plus grande productivité et
+             permet aux entreprises de configurer, personnaliser, déployer, analyser et gérer leurs appareils. Cela améliore les performances de l&apos;entreprise et aide les travailleurs à obtenir une plus grande productivité et
              efficacité, au bureau ou sur le terrain.
           </p>
         </div>

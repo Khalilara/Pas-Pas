@@ -76,7 +76,7 @@ export const Footer = () => {
               <h3 className="font-bold text-2xl mb-6 text-center md:text-left">Contactez-nous</h3>
               <div className="text-center md:text-left">
                 <p className="mb-4 text-gray-300">
-                  Vous avez un projet ou une question ? N'hésitez pas à nous contacter.
+                  Vous avez un projet ou une question ? N&apos;hésitez pas à nous contacter.
                 </p>
                 <div className="flex items-center justify-center md:justify-start mb-4">
                   <svg className="w-5 h-5 mr-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
