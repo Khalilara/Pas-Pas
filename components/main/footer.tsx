@@ -13,7 +13,7 @@ export const Footer = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -21,7 +21,7 @@ export const Footer = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
