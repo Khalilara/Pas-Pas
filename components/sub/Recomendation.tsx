@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 
 const SamsungEnterpriseComponent = () => {
   return (
@@ -42,15 +43,20 @@ const SamsungEnterpriseComponent = () => {
         {/* Section Android Enterprise */}
         <div className="flex flex-col items-center text-center space-y-6 p-8 border border-gray-300 rounded-xl shadow-md bg-white/5">
           <div className="bg-white rounded-full px-6 py-2 flex items-center space-x-2 shadow-md">
-            <img 
-              src="/image3.png" 
-              alt="Android Enterprise Recommended" 
-              className="h-12 object-contain"
+            <Image
+              src="/image3.png"
+              alt="Android Enterprise Recommended"
+              width={120}   // adjust as needed
+              height={48}   // adjust as needed
+              className="object-contain"
+              priority
             />
           </div>
 
           <div className="space-y-4 leading-relaxed tracking-wide">
-            <h2 className="text-3xl font-extrabold text-white">Android Enterprise Recommended</h2>
+            <h2 className="text-3xl font-extrabold text-white">
+              Android Enterprise Recommended
+            </h2>
 
             <p className="text-base text-white font-light">
               Les appareils Samsung Galaxy et Knox<br />
