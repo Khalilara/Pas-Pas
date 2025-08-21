@@ -4,36 +4,43 @@ import Link from "next/link";
 import { useState } from "react";
 import { FOOTER_DATA } from "@/constants";
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export const Footer = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simuler l'envoi du formulaire
-    // Remplacez ceci par votre logique d'envoi d'email
+
     try {
-      console.log('Form data:', formData);
+      console.log("Form data:", formData);
       // Ici vous pourriez appeler votre API pour envoyer l'email
-      alert('Message envoyé avec succès !');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      alert("Message envoyé avec succès !");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      alert('Erreur lors de l\'envoi du message.');
+      alert("Erreur lors de l'envoi du message.");
     } finally {
       setIsSubmitting(false);
     }
@@ -42,7 +49,6 @@ export const Footer = () => {
   return (
     <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
       <div className="w-full flex flex-col items-center justify-center m-auto max-w-7xl">
-        
         {/* Section des liens existants */}
         <div className="w-full h-full flex flex-row items-start justify-around flex-wrap mb-12">
           {FOOTER_DATA.map((column) => (
@@ -70,28 +76,35 @@ export const Footer = () => {
         {/* Section de contact */}
         <div className="w-full max-w-4xl bg-gray-800/30 rounded-lg p-8 mb-8">
           <div className="grid md:grid-cols-2 gap-8">
-            
             {/* Informations de contact */}
             <div className="flex flex-col justify-center">
-              <h3 className="font-bold text-2xl mb-6 text-center md:text-left">Contactez-nous</h3>
+              <h3 className="font-bold text-2xl mb-6 text-center md:text-left">
+                Contactez-nous
+              </h3>
               <div className="text-center md:text-left">
                 <p className="mb-4 text-gray-300">
-                  Vous avez un projet ou une question ? N&apos;hésitez pas à nous contacter.
+                  Vous avez un projet ou une question ? N&apos;hésitez pas à nous
+                  contacter.
                 </p>
                 <div className="flex items-center justify-center md:justify-start mb-4">
-                  <svg className="w-5 h-5 mr-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  <svg
+                    className="w-5 h-5 mr-3 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <a 
-                    href="mailto:test@gmail.com" 
+                  <a
+                    href="mailto:test@gmail.com"
                     className="text-yellow-400 hover:text-yellow-300 transition-colors"
                   >
                     k.araoui@samsung.com
                   </a>
                 </div>
                 <p className="text-sm text-gray-400">
-                  Ou utilisez le formulaire ci-contre pour nous envoyer un message directement.
+                  Ou utilisez le formulaire ci-contre pour nous envoyer un message
+                  directement.
                 </p>
               </div>
             </div>
@@ -110,7 +123,7 @@ export const Footer = () => {
                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-400 transition-all"
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -122,7 +135,7 @@ export const Footer = () => {
                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-400 transition-all"
                   />
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -134,7 +147,7 @@ export const Footer = () => {
                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-400 transition-all"
                   />
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -142,17 +155,17 @@ export const Footer = () => {
                     onChange={handleInputChange}
                     placeholder="Votre message"
                     required
-                    rows="4"
+                    rows={4}
                     className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-400 resize-vertical transition-all"
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Envoi en cours...' : 'SEND MESSAGE'}
+                  {isSubmitting ? "Envoi en cours..." : "SEND MESSAGE"}
                 </button>
               </form>
             </div>
